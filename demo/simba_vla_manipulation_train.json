@@ -1,0 +1,102 @@
+[
+  {
+    "id": "manip-001-pick-mug",
+    "point_cloud": "mug_partial.pcd",
+    "instruction": "pick up the mug from the table",
+    "action_label": "pick",
+    "action_vector": [0.15, -0.05, 0.20, 0.0, 0.0, 0.1, 1.0],
+    "scenario": "manipulation",
+    "proprio_state": [0.0, -0.5, 0.3, 0.0, 0.8, 0.0, 0.0],
+    "metadata": {"object": "mug", "occlusion_level": "medium"}
+  },
+  {
+    "id": "manip-002-place-mug",
+    "point_cloud": "mug_partial.pcd",
+    "instruction": "place the mug on the right side of the table",
+    "action_label": "place",
+    "action_vector": [0.30, 0.20, -0.15, 0.0, 0.0, -0.05, 0.0],
+    "scenario": "manipulation",
+    "proprio_state": [0.15, -0.05, 0.50, 0.0, 0.0, 0.1, 1.0],
+    "metadata": {"object": "mug", "occlusion_level": "low"}
+  },
+  {
+    "id": "manip-003-push-box",
+    "point_cloud": "box_partial.pcd",
+    "instruction": "push the box towards you slowly",
+    "action_label": "push",
+    "action_vector": [-0.20, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "scenario": "manipulation",
+    "proprio_state": [0.10, 0.0, 0.25, 0.0, 0.0, 0.0, 0.0],
+    "metadata": {"object": "box", "occlusion_level": "low"}
+  },
+  {
+    "id": "manip-004-reach-bottle",
+    "point_cloud": "bottle_partial.pcd",
+    "instruction": "reach for the bottle without knocking anything over",
+    "action_label": "reach",
+    "action_vector": [0.25, 0.10, 0.05, 0.0, 0.0, 0.0, 0.0],
+    "scenario": "manipulation",
+    "proprio_state": [0.0, 0.0, 0.30, 0.0, 0.0, 0.0, 0.0],
+    "metadata": {"object": "bottle", "occlusion_level": "high"}
+  },
+  {
+    "id": "manip-005-grasp-occluded",
+    "point_cloud": "object_occluded.pcd",
+    "instruction": "grasp the partially visible object behind the obstacle",
+    "action_label": "pick",
+    "action_vector": [0.30, -0.10, 0.15, 0.05, -0.02, 0.08, 1.0],
+    "scenario": "manipulation",
+    "proprio_state": [0.0, 0.0, 0.35, 0.0, 0.0, 0.0, 0.0],
+    "metadata": {"object": "unknown", "occlusion_level": "severe"}
+  },
+  {
+    "id": "manip-006-align-handle",
+    "point_cloud": "drawer_partial.pcd",
+    "instruction": "align the gripper with the drawer handle then pull",
+    "action_label": "align",
+    "action_vector": [0.05, 0.0, 0.1, 0.0, 0.0, 0.15, 0.0],
+    "scenario": "manipulation",
+    "proprio_state": [0.0, -0.2, 0.30, 0.0, 0.0, 0.0, 0.0],
+    "metadata": {"object": "drawer", "occlusion_level": "medium"}
+  },
+  {
+    "id": "manip-007-inspect-top",
+    "point_cloud": "airplane.pcd",
+    "instruction": "inspect the top surface of the object from above",
+    "action_label": "inspect",
+    "action_vector": [0.0, 0.0, 0.30, 0.0, 0.0, 0.0, 0.0],
+    "scenario": "manipulation",
+    "proprio_state": [0.0, 0.0, 0.50, 0.0, 0.0, 0.0, 0.0],
+    "metadata": {"object": "airplane", "occlusion_level": "low"}
+  },
+  {
+    "id": "manip-008-lift-careful",
+    "point_cloud": "sofa.pcd",
+    "instruction": "carefully lift the object without tilting",
+    "action_label": "lift",
+    "action_vector": [0.0, 0.0, 0.25, 0.0, 0.0, 0.0, 1.0],
+    "scenario": "manipulation",
+    "proprio_state": [0.10, -0.05, 0.20, 0.0, 0.0, 0.05, 1.0],
+    "metadata": {"object": "sofa_model", "occlusion_level": "medium"}
+  },
+  {
+    "id": "manip-009-approach-left",
+    "point_cloud": "input.ply",
+    "instruction": "approach from the left and keep the gripper open",
+    "action_label": "approach",
+    "action_vector": [0.25, -0.1, 0.12, 0.0, 0.0, 0.0, 0.0],
+    "scenario": "manipulation",
+    "proprio_state": [0.0, 0.0, 0.40, 0.0, 0.0, 0.0, 0.0],
+    "metadata": {"object": "generic", "occlusion_level": "low"}
+  },
+  {
+    "id": "manip-010-rotate-flip",
+    "point_cloud": "box_partial.pcd",
+    "instruction": "rotate the object 90 degrees and place it face down",
+    "action_label": "place",
+    "action_vector": [0.0, 0.0, -0.10, 0.0, 1.57, 0.0, 0.0],
+    "scenario": "manipulation",
+    "proprio_state": [0.10, 0.0, 0.40, 0.0, 0.0, 0.0, 1.0],
+    "metadata": {"object": "box", "occlusion_level": "low"}
+  }
+]

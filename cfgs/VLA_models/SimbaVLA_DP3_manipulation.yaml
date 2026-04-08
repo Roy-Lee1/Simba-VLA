@@ -1,0 +1,68 @@
+# Completion-Augmented 3D Diffusion Policy for Robotic Manipulation
+# DP3-style architecture with Simba geometric completion
+# Scenario: occluded tabletop manipulation with language instructions
+
+dataset:
+  train_annotations: demo/simba_vla_manipulation_train.json
+  val_annotations: demo/simba_vla_manipulation_val.json
+  point_cloud_root:
+  num_points: 4096
+  max_text_length: 48
+  normalize_points: true
+  min_token_frequency: 1
+  max_vocab_size: 4096
+  vocab_path:
+  # Occlusion augmentation during training
+  occlusion:
+    enabled: true
+    types: ["viewpoint", "planar", "random"]
+    severity: 0.3
+    random_severity: true
+
+model:
+  # Advanced architecture selection
+  use_pointnetpp: true
+  action_head_type: diffusion
+
+  # Dimensions
+  hidden_dim: 512
+  point_feature_dim: 512
+  text_embed_dim: 128
+  text_hidden_dim: 256
+  dropout: 0.1
+
+  # Action space: 7-DoF (3 position + 3 rotation + 1 gripper)
+  action_horizon: 1
+  temporal_horizon: 1
+  proprio_dim: 0
+
+  # Simba completion integration
+  use_completion: true
+  completion:
+    config_path: cfgs/PCN_models/Simba.yaml
+    checkpoint_path: experiments/simba_pcn/ckpt-best.pth
+    device: auto
+    output_points: 4096
+    freeze: true
+
+  # Diffusion action head
+  diffusion:
+    num_timesteps: 100
+    schedule: cosine
+    base_dim: 128
+    clip_sample: true
+
+train:
+  seed: 42
+  device: auto
+  output_dir: experiments/simba_vla_dp3_manipulation
+  batch_size: 16
+  eval_batch_size: 32
+  num_workers: 4
+  epochs: 100
+  lr: 0.0003
+  min_lr: 0.000001
+  weight_decay: 0.01
+  cls_loss_weight: 0.5
+  reg_loss_weight: 1.0
+  grad_clip: 1.0

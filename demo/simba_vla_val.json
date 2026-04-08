@@ -1,0 +1,16 @@
+[
+  {
+    "id": "val-airplane-lift",
+    "point_cloud": "airplane.pcd",
+    "instruction": "complete the hidden geometry and lift slightly after alignment",
+    "action_label": "lift",
+    "action_vector": [0.0, 0.0, 0.18, 0.35]
+  },
+  {
+    "id": "val-sofa-approach",
+    "point_cloud": "sofa.pcd",
+    "instruction": "approach from above and keep a stable offset before contact",
+    "action_label": "approach",
+    "action_vector": [0.02, 0.0, 0.15, 0.0]
+  }
+]

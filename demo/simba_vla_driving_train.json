@@ -1,0 +1,82 @@
+[
+  {
+    "id": "drive-001-go-straight",
+    "point_cloud": "lidar_scene_001.pcd",
+    "instruction": "continue driving straight ahead",
+    "action_label": "go_straight",
+    "action_vector": [1.0, 0.0, 0.02],
+    "waypoints": [[2.0, 0.0, 0.0], [4.0, 0.0, 0.0], [6.0, 0.0, 0.0], [8.0, 0.0, 0.0]],
+    "scenario": "driving",
+    "metadata": {"road_type": "highway", "weather": "clear", "occlusion": "none"}
+  },
+  {
+    "id": "drive-002-turn-left",
+    "point_cloud": "lidar_scene_002.pcd",
+    "instruction": "turn left at the next intersection",
+    "action_label": "turn_left",
+    "action_vector": [0.5, -0.35, 0.0],
+    "waypoints": [[1.5, 0.0, 0.0], [2.5, -0.8, 0.0], [3.0, -2.0, 0.0], [3.0, -3.5, 0.0]],
+    "scenario": "driving",
+    "metadata": {"road_type": "intersection", "weather": "clear", "occlusion": "vehicle"}
+  },
+  {
+    "id": "drive-003-turn-right",
+    "point_cloud": "lidar_scene_003.pcd",
+    "instruction": "take a right turn and merge into traffic",
+    "action_label": "turn_right",
+    "action_vector": [0.6, 0.30, 0.0],
+    "waypoints": [[1.5, 0.0, 0.0], [2.5, 1.0, 0.0], [3.2, 2.5, 0.0], [3.5, 4.0, 0.0]],
+    "scenario": "driving",
+    "metadata": {"road_type": "intersection", "weather": "rain", "occlusion": "pedestrian"}
+  },
+  {
+    "id": "drive-004-slow-down",
+    "point_cloud": "lidar_scene_004.pcd",
+    "instruction": "slow down, there is a pedestrian crossing ahead",
+    "action_label": "slow_down",
+    "action_vector": [0.3, 0.0, 0.5],
+    "waypoints": [[1.0, 0.0, 0.0], [1.8, 0.0, 0.0], [2.3, 0.0, 0.0], [2.5, 0.0, 0.0]],
+    "scenario": "driving",
+    "metadata": {"road_type": "urban", "weather": "clear", "occlusion": "pedestrian"}
+  },
+  {
+    "id": "drive-005-stop",
+    "point_cloud": "lidar_scene_005.pcd",
+    "instruction": "stop at the red light",
+    "action_label": "stop",
+    "action_vector": [0.0, 0.0, 1.0],
+    "waypoints": [[0.5, 0.0, 0.0], [0.8, 0.0, 0.0], [0.9, 0.0, 0.0], [0.9, 0.0, 0.0]],
+    "scenario": "driving",
+    "metadata": {"road_type": "urban", "weather": "fog", "occlusion": "heavy"}
+  },
+  {
+    "id": "drive-006-lane-change",
+    "point_cloud": "lidar_scene_006.pcd",
+    "instruction": "change to the left lane to overtake",
+    "action_label": "lane_change_left",
+    "action_vector": [0.8, -0.15, 0.0],
+    "waypoints": [[2.0, 0.0, 0.0], [4.0, -0.5, 0.0], [6.0, -1.5, 0.0], [8.0, -2.0, 0.0]],
+    "scenario": "driving",
+    "metadata": {"road_type": "highway", "weather": "clear", "occlusion": "vehicle"}
+  },
+  {
+    "id": "drive-007-navigate-occluded",
+    "point_cloud": "lidar_scene_007.pcd",
+    "instruction": "proceed carefully through the construction zone with limited visibility",
+    "action_label": "slow_down",
+    "action_vector": [0.2, 0.05, 0.3],
+    "waypoints": [[0.8, 0.0, 0.0], [1.4, 0.2, 0.0], [2.0, 0.3, 0.0], [2.5, 0.2, 0.0]],
+    "scenario": "driving",
+    "metadata": {"road_type": "construction", "weather": "clear", "occlusion": "severe"}
+  },
+  {
+    "id": "drive-008-u-turn",
+    "point_cloud": "lidar_scene_008.pcd",
+    "instruction": "make a U-turn at the roundabout",
+    "action_label": "u_turn",
+    "action_vector": [0.3, -0.50, 0.0],
+    "waypoints": [[1.0, 0.0, 0.0], [1.5, -1.5, 0.0], [0.5, -3.0, 0.0], [-0.5, -2.0, 0.0]],
+    "scenario": "driving",
+    "metadata": {"road_type": "roundabout", "weather": "clear", "occlusion": "none"}
+  }
+]

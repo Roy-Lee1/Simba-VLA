@@ -1,0 +1,64 @@
+# Completion-Augmented 3D Diffusion Policy for Autonomous Driving
+# Waypoint regression conditioned on LiDAR point cloud + navigation command
+# Scenario: sparse LiDAR completion + command-conditioned trajectory prediction
+
+dataset:
+  train_annotations: demo/simba_vla_driving_train.json
+  val_annotations: demo/simba_vla_driving_val.json
+  point_cloud_root:
+  num_points: 8192
+  max_text_length: 32
+  normalize_points: true
+  min_token_frequency: 1
+  max_vocab_size: 2048
+  vocab_path:
+  occlusion:
+    enabled: true
+    types: ["distance", "sector", "random"]
+    severity: 0.4
+    random_severity: true
+
+model:
+  use_pointnetpp: true
+  action_head_type: diffusion
+
+  hidden_dim: 512
+  point_feature_dim: 512
+  text_embed_dim: 128
+  text_hidden_dim: 256
+  dropout: 0.1
+
+  # Action space: future waypoints (4 steps x 3D position)
+  action_horizon: 4
+  temporal_horizon: 1
+  proprio_dim: 0
+
+  # Simba completion for sparse LiDAR densification
+  use_completion: true
+  completion:
+    config_path: cfgs/KITTI_models/Simba_KITT.yaml
+    checkpoint_path: experiments/simba_kitti/ckpt-best.pth
+    device: auto
+    output_points: 8192
+    freeze: true
+
+  diffusion:
+    num_timesteps: 50
+    schedule: cosine
+    base_dim: 128
+    clip_sample: false
+
+train:
+  seed: 42
+  device: auto
+  output_dir: experiments/simba_vla_dp3_driving
+  batch_size: 8
+  eval_batch_size: 16
+  num_workers: 4
+  epochs: 200
+  lr: 0.0001
+  min_lr: 0.000001
+  weight_decay: 0.01
+  cls_loss_weight: 0.5
+  reg_loss_weight: 1.0
+  grad_clip: 1.0

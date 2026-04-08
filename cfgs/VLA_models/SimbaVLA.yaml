@@ -1,0 +1,39 @@
+dataset:
+  train_annotations: demo/simba_vla_train.json
+  val_annotations: demo/simba_vla_val.json
+  point_cloud_root:
+  num_points: 2048
+  max_text_length: 32
+  normalize_points: true
+  min_token_frequency: 1
+  max_vocab_size: 2048
+  vocab_path:
+
+model:
+  hidden_dim: 256
+  point_feature_dim: 256
+  text_embed_dim: 128
+  text_hidden_dim: 256
+  dropout: 0.1
+  use_completion: false
+  completion:
+    config_path: cfgs/PCN_models/Simba.yaml
+    checkpoint_path:
+    device: auto
+    output_points: 2048
+    freeze: true
+
+train:
+  seed: 42
+  device: auto
+  output_dir: experiments/simba_vla
+  batch_size: 2
+  eval_batch_size: 2
+  num_workers: 0
+  epochs: 20
+  lr: 0.0001
+  min_lr: 0.00001
+  weight_decay: 0.01
+  cls_loss_weight: 1.0
+  reg_loss_weight: 1.0
+  grad_clip: 1.0

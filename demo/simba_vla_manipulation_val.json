@@ -1,0 +1,32 @@
+[
+  {
+    "id": "manip-val-001-pick-bowl",
+    "point_cloud": "bowl_partial.pcd",
+    "instruction": "pick up the bowl from the counter",
+    "action_label": "pick",
+    "action_vector": [0.12, -0.03, 0.18, 0.0, 0.0, 0.05, 1.0],
+    "scenario": "manipulation",
+    "proprio_state": [0.0, 0.0, 0.35, 0.0, 0.0, 0.0, 0.0],
+    "metadata": {"object": "bowl", "occlusion_level": "medium"}
+  },
+  {
+    "id": "manip-val-002-push-forward",
+    "point_cloud": "sofa.pcd",
+    "instruction": "push the object away from you gently",
+    "action_label": "push",
+    "action_vector": [0.18, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "scenario": "manipulation",
+    "proprio_state": [0.0, 0.0, 0.25, 0.0, 0.0, 0.0, 1.0],
+    "metadata": {"object": "sofa_model", "occlusion_level": "low"}
+  },
+  {
+    "id": "manip-val-003-approach-occluded",
+    "point_cloud": "airplane.pcd",
+    "instruction": "approach the partially hidden part and hover above",
+    "action_label": "approach",
+    "action_vector": [0.20, 0.05, 0.10, 0.0, 0.0, 0.0, 0.0],
+    "scenario": "manipulation",
+    "proprio_state": [0.0, 0.0, 0.45, 0.0, 0.0, 0.0, 0.0],
+    "metadata": {"object": "airplane", "occlusion_level": "high"}
+  }
+]

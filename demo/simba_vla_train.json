@@ -1,0 +1,23 @@
+[
+  {
+    "id": "train-airplane-approach",
+    "point_cloud": "airplane.pcd",
+    "instruction": "approach from the left and keep the gripper open",
+    "action_label": "approach",
+    "action_vector": [0.25, -0.1, 0.12, 0.0]
+  },
+  {
+    "id": "train-sofa-align",
+    "point_cloud": "sofa.pcd",
+    "instruction": "align to the center of the visible surface before grasping",
+    "action_label": "align",
+    "action_vector": [0.05, 0.0, 0.2, 0.15]
+  },
+  {
+    "id": "train-input-inspect",
+    "point_cloud": "input.ply",
+    "instruction": "inspect the occluded geometry and move closer without closing the gripper",
+    "action_label": "inspect",
+    "action_vector": [0.1, 0.02, 0.08, 0.0]
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "drive-val-001-straight",
+    "point_cloud": "lidar_scene_val_001.pcd",
+    "instruction": "keep going straight and maintain current speed",
+    "action_label": "go_straight",
+    "action_vector": [0.9, 0.0, 0.0],
+    "waypoints": [[2.0, 0.0, 0.0], [4.0, 0.0, 0.0], [6.0, 0.0, 0.0], [8.0, 0.0, 0.0]],
+    "scenario": "driving",
+    "metadata": {"road_type": "highway", "weather": "rain", "occlusion": "light"}
+  },
+  {
+    "id": "drive-val-002-stop-occluded",
+    "point_cloud": "lidar_scene_val_002.pcd",
+    "instruction": "stop immediately, obstacle detected ahead",
+    "action_label": "stop",
+    "action_vector": [0.0, 0.0, 1.0],
+    "waypoints": [[0.3, 0.0, 0.0], [0.4, 0.0, 0.0], [0.4, 0.0, 0.0], [0.4, 0.0, 0.0]],
+    "scenario": "driving",
+    "metadata": {"road_type": "urban", "weather": "fog", "occlusion": "severe"}
+  },
+  {
+    "id": "drive-val-003-turn-right",
+    "point_cloud": "lidar_scene_val_003.pcd",
+    "instruction": "turn right and enter the parking lot",
+    "action_label": "turn_right",
+    "action_vector": [0.4, 0.40, 0.1],
+    "waypoints": [[1.0, 0.0, 0.0], [1.5, 0.8, 0.0], [1.8, 2.0, 0.0], [1.8, 3.0, 0.0]],
+    "scenario": "driving",
+    "metadata": {"road_type": "parking", "weather": "clear", "occlusion": "vehicle"}
+  }
+]
